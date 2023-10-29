@@ -9,11 +9,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     
        <!--favicon-img--> 
-       <link rel="icon" type="image/png" href="images/favicon.jpg">
+       <link rel="icon" type="image/png" href="images/aiss.png">
        <!--favicon-img-->
     
         <link rel="stylesheet" href="css/index.css">
-       
+
     
     </head>
 <body>
@@ -39,7 +39,7 @@
   <!-- NAVIGATION -->
   <div class="navigation">
     <div class="logo hover ">
-       <a href="index-two.html" class="text">Ais Music</a>
+       <a href="index.html" class="text">Ais Music</a>
     </div>
     <div class="menu-bar hover ">
         <div class="menu-bar-name text">
@@ -92,6 +92,29 @@
 
     </div>
 </div>
+<script>
+
+document.getElementById('submit').addEventListener('click', function() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const body = document.getElementById('body').value;
+
+    if (validateEmail(email)) {
+        const mailtoLink = `mailto:aiismuis11@gmail.com?subject=${subject}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${body}`;
+        window.location.href = mailtoLink;
+    } else {
+        document.getElementById('message').style.display = 'block';
+    }
+});
+
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+</script>
+
+
 
 <!-- CONTACT FORM -->
 
@@ -143,7 +166,7 @@
 
     <div class="navigation-content">
         <div class="navigation-logo hover opacity">
-            <a href="#" class="text">ARLO BROWN</a>
+            <a href="#" class="text">Ais Music</a>
          </div>
         <ul class="navigation-ul">
             <li><a href="index-one.html" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
@@ -186,7 +209,6 @@
 
 
         </main>
-
         <script src="js/jquery.min.js"></script>
         <script src="js/circletype.min.js"></script>
         <script src="js/jquery.lettering.js"></script>
