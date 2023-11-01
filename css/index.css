@@ -931,7 +931,7 @@ SONGS ONE
       padding-top: 5px;
       text-align: left;
   }
-  #songs-one #songs-container .song .song-details .artist-name{
+  #songs-one #songs-container .song .song-details .artist-name{play-song 
     font-size: 12px;
     opacity: .8;
   }
@@ -959,7 +959,7 @@ SONGS ONE
 
 #songs-one #songs-container .song .play-song , #songs-one #songs-container .song .download-song a {
     display: flex;
-    width: 60px;
+    width: 20px;
     align-items: center;
     justify-content: space-around;
     font-size: 14px;
@@ -2204,3 +2204,30 @@ BLOG-SINGLE-ONE
 
 /* download button*/
 
+
+
+/* CSS for responsiveness */
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    /* Example: */
+    /* Set the width of the navigation links to 100% */
+    .navigation-ul li {
+      width: 100%;
+    }
+    /* Adjust the font size for better visibility on smaller screens */
+    .text {
+      font-size: 16px;
+    }
+    /* Adjust the size of the images for smaller screens */
+    .img {
+      max-width: 100%;
+    }
+    /* Add more rules as needed */
+  }
+  
+  /* Additional CSS for specific screen sizes */
+  /* Example: for larger screens */
+  @media only screen and (min-width: 1200px) {
+    /* Add specific rules for larger screens here */
+  }
+  

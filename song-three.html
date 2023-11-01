@@ -106,8 +106,11 @@
  <div class="headphone img text">
     <img src="images/headphone.png" title="headphone zone" class="text" alt="headphone">
   </div>
+
+
+
+
    <!-- HEADPHONE IMG -->
-  
                
    
  <!-- MUSIC INDICATOR -->
@@ -142,7 +145,7 @@
 
     <div class="navigation-content">
         <div class="navigation-logo hover opacity">
-            <a href="#" class="text">ARLO BROWN</a>
+            <a href="#" class="text">Ais Music</a>
          </div>
         <ul class="navigation-ul">
             <li><a href="index-one.html" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
@@ -264,35 +267,57 @@
                     "Bivəfa",
                 ];
 
+
+                
                 songsContainer.innerHTML += `
-                    <div class="song fade-up">
-                        <div class="song-img">
-                            <img src="images/${index + 1}.jpg" alt="song">
-                        </div>
-                        <div class="song-details">
-                            <div class="song-details-content">
-                                <div class="song-name">${songNames[index]}</div>
-                                <div class="artist-name">Ais</div>
-                            </div>
-                            <div class="music-player">
-                                <div class="play-song mouse">
-                                    <img src="images/play.png" alt="play" data-song="song-${index}">
-                                    <audio data-audio="song-${index}">
-                                        <source src="${musicFile}" type="audio/mpeg">
-                                    </audio>
-                                </div>
-                                <div class="download-song">
-                                    <a href="${musicFile}" download="AIS - ${songNames[index]}"><img src="images/download.png" alt="download"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
+        <div class="song fade-up">
+          <div class="song-img">
+            <img src="images/${index + 1}.jpg" alt="song">
+          </div>
+          <div class="song-details">
+            <div class="song-details-content">
+              <div class="song-name">${songNames[index]}</div>
+              <div class="artist-name">Ais</div>
+            </div>
+            <div class="music-player">
+              <div class="play-song mouse">
+                <img src="images/play.png" alt="play" data-song="song-${index}">
+                <audio data-audio="song-${index}" preload="none">
+                  <source src="${musicFile}" type="audio/mpeg">
+                </audio>
+              </div>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="10" class="slider" style="float: left;" onchange="changeVolume(this.value, ${index})">
+            </div>
+              <div class="download-song">
+                <a href="${musicFile}" download="AIS - ${songNames[index]}"><img src="images/download.png" alt="download"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    });
+
+</script>
+<script>
+    function changeVolume(value, index) {
+        var audio = document.querySelector(`[data-audio="song-${index}"]`);
+        audio.volume = value / 100;
+    }
+</script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const preloader = document.getElementById("preloader");
+
+            gsap.to(preloader, { duration: 4, opacity: 1, display: 'none', ease: "power2.out" });
         });
     </script>
     
+    <!-- HEADPHONE BUTTON -->
+<!-- HEADPHONE BUTTON -->
     
-
 </body>
 </html>
