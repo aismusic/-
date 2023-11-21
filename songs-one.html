@@ -19,7 +19,39 @@
 <body>
     <main id="songs-one">
 
+        <style>
+            .volume-container {
+                position: fixed;
+                right: 15px;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                opacity: 0.5;
+                transition: opacity 1s;
+                bottom: 24%;
+            }
+            
+            
+            
+            .volume-slider {
+                width: 100%;
+                height: 100%;
+                background-color: red;
+                border-radius: 15px;
+                transform: rotate(270deg);
+                transform-origin: 100% 100%;
+            }
 
+        
+        </style>
+        
+        
+        <div class="volume-container">
+            <div class="vertical-volume-control">
+                <input type="range" class="volume-slider" id="volume" name="volume" min="0" max="100" step="5" value="100">
+            </div>
+        </div>
         
         <div class="cursor scale"></div>
         <div class="cursor-two scale"></div>
@@ -78,7 +110,7 @@
 <div id="songs-container">
 
 
-<a href="songs-one.html"><button class="button-34" >Back</button></a> 
+<a href="index.html"><button class="button-34" >Back</button></a> 
 <a href="songs-two.html"><button class="button-33" >Next</button></a>
 </div>
    
@@ -144,12 +176,23 @@
         <div class="navigation-logo hover opacity">
             <a href="#" class="text">ARLO BROWN</a>
          </div>
-        <ul class="navigation-ul">
+         <ul class="navigation-ul">
             <li><a href="index.html" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
-            <li><a href="about-one.html"  data-text="About"  data-img="images/about-img.jpg">About</a></li>
-            <li><a href="songs-one.html" data-text="Songs"  data-img="images/album-thumbnail-nine.jpg">Songs</a></li>
-            <li><a href="contact-one.html"  data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
+            <li><a href="about-one.html" data-text="About" data-img="images/about-img.jpg">About</a></li>
+            <li class="navigation-li">
+                <a href="songs-one.html" data-text="Songs" data-img="images/album-thumbnail-nine.jpg">Songs</a>
+                <!-- <ul class="submenu">
+                    <li class="submenu-li"><a href="songs-one.html" data-text="Songs" data-img="images/album-thumbnail-nine.jpg">Songs-1</a></li>
+                    <li class="submenu-li"><a href="songs-two.html" data-text="Songs" data-img="images/album-thumbnail-nine.jpg">Songs-2</a></li>
+                    <li class="submenu-li"><a href="song-three.html" data-text="Songs" data-img="images/album-thumbnail-nine.jpg">Songs-3</a></li>
+                    <li class="submenu-li"><a href="songs-four.html" data-text="Songs" data-img="images/album-thumbnail-nine.jpg">Songs-4</a></li>
+                    <li class="submenu-li"><a href="songs-five.html" data-text="Songs" data-img="images/album-thumbnail-nine.jpg">Songs-5</a></li>
+                    <li class="submenu-li"><a href="song-six.html" data-text="Songs" data-img="images/album-thumbnail-nine.jpg">Songs-6</a></li>
+                </ul> -->
+            </li>
+            <li><a href="contact-one.html" data-text="Contact" data-img="images/album-thumbnail-four.jpg">Contact</a></li>
         </ul>
+        
         <div class="navigation-close hover about-close opacity">
             <div class="navigation-close-line"></div>
             <div class="navigation-close-line"></div>
@@ -291,7 +334,76 @@
         });
     </script>
     
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const volumeControl = document.getElementById("volume");
+
+            // Add event listener to update volume when the input range changes
+            volumeControl.addEventListener("input", function () {
+                const audioElements = document.querySelectorAll("audio");
+                audioElements.forEach(audio => {
+                    audio.volume = volumeControl.value / 100; // Adjusting the volume range to be between 0 and 1
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const volumeControl = document.getElementById("volume");
+            const volumeContainer = document.querySelector(".volume-container");
+            const verticalVolumeControl = document.querySelector(".vertical-volume-control");
+
+            volumeControl.addEventListener("input", function () {
+                const audioElements = document.querySelectorAll("audio");
+                audioElements.forEach(audio => {
+                    audio.volume = volumeControl.value;
+                });
+            });
+
+            // Add event listener to show/hide volume control
+            document.addEventListener("mousemove", function (event) {
+                const mouseY = event.clientY;
+                const volumeContainerY = volumeContainer.getBoundingClientRect().top;
+
+                if (mouseY <= volumeContainerY || mouseY > volumeContainerY + volumeContainer.clientHeight) {
+                    hideVolumeControl();
+                } else {
+                    showVolumeControl();
+                }
+            });
+
+            function showVolumeControl() {
+                gsap.to(volumeContainer, { opacity: 1, duration: 2 });
+                gsap.to(verticalVolumeControl, { width: "250px", opacity: 1, duration: 2 });
+            }
+
+            function hideVolumeControl() {
+                gsap.to(volumeContainer, { opacity: 0.5, duration: 2 });
+                gsap.to(verticalVolumeControl, { width: "100px", opacity: 0.5, duration: 2 });
+            }
+
+            // Add drag functionality to the volume container
+            let isDragging = false;
+            let offsetY;
+
+            verticalVolumeControl.addEventListener("mousedown", function (event) {
+                isDragging = false;
+                offsetY = event.clientY - verticalVolumeControl.getBoundingClientRect().bottom;
+            });
+
+            document.addEventListener("mousemove", function (event) {
+                if (isDragging) {
+                    const newY = event.clientY + offsetY;
+                    volumeContainer.style.top = `${newY}px`;
+                }
+            });
+
+            document.addEventListener("mouseup", function () {
+                isDragging = false;
+            });
+        });
+    </script>
 
 </body>
 </html>
