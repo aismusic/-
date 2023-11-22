@@ -691,7 +691,7 @@ INDEX ONE
 ====================================*/
 #index-one .new-release{
     height: auto;
-    width:30%;
+    max-width:350px;
     position: fixed;
     right: 2%;
     bottom: 1%;
