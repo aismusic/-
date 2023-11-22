@@ -1516,30 +1516,30 @@ COMMON
 
 
 .p{
-    font-size: 10px;
+    font-size: 8px;
 }
 .p img{
   height: 60px;
 }
 .logo{
-    font-size: 15px;
+    font-size: 13px;
     padding: 5px;
 
  }
  .navigation-logo{
-    font-size: 15px;
+    font-size: 13px;
     padding: 5px;
  }
  .menu-bar-name{
-     font-size: 15px;
+     font-size: 13px;
      display: none;
  }
  .menu-bar-line{
-     width: 30px;
+     width: 25px;
      height: 3px;
  }
  .navigation-content .navigation-ul li a{
-    font-size: 35px;
+    font-size: 200px;
 }
 .headphone{
     z-index: 2;
@@ -1548,8 +1548,8 @@ COMMON
     display: none;
 }
 .social-media-links-navigation{
-    width: 40%;
-    font-size: 16px;
+    width: 30%;
+    font-size: 15px;
 }
 
 .heading{
@@ -1567,8 +1567,8 @@ COMMON
     font-size: 14px;
 }
 .social-media-links{
-    width: 20%;
-    font-size: 18px;
+    width: 15%;
+    font-size: 15px;
 }
 
 
