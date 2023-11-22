@@ -109,7 +109,7 @@ body{
 
  
 #preloader{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background: #050505; 
     overflow: hidden;
@@ -691,7 +691,7 @@ INDEX ONE
 ====================================*/
 #index-one .new-release{
     height: auto;
-    width:350px;
+    width:30%;
     position: fixed;
     right: 2%;
     bottom: 1%;
@@ -1491,7 +1491,7 @@ COMMON
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    max-width: 80%;
 }
 
 
@@ -1567,7 +1567,7 @@ COMMON
     font-size: 14px;
 }
 .social-media-links{
-    width: 18%;
+    width: 20%;
     font-size: 18px;
 }
 
