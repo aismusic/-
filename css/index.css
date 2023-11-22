@@ -709,17 +709,17 @@ INDEX ONE
     width: 100%;
 }
 #index-one .new-release .song-details{
-padding: 10px;
+padding: 0;
 }
 
 #index-one .new-release .song-name{
-font-size: 14px;
-opacity: .9;
+font-size: 15px;
+opacity: 1;
 padding-top: 5px;
 font-family: poppins;
 }
 #index-one .new-release .singer-name{
-    font-size: 12px;
+    font-size: 15px;
 opacity: .7;
 font-family: poppins;
 padding-top: 5px;
@@ -910,7 +910,7 @@ SONGS ONE
   }
   #songs-one #songs-container .song .song-details{
     position: relative;
-    width: 100%;
+    max-width: 100%;
     height: auto;
     left: 0%;
     bottom: 0%;
@@ -925,7 +925,7 @@ SONGS ONE
       padding-top: 5px;
       text-align: left;
   }
-  #songs-one #songs-container .song .song-details .artist-name{play-song 
+  #songs-one #songs-container .song .song-details .artist-name{
     font-size: 12px;
     opacity: .8;
   }
@@ -1561,13 +1561,13 @@ COMMON
 }
 
 #index-one .new-release{
-    width:190px;
+    max-width: 20%;
 }
 #message{
     font-size: 14px;
 }
 .social-media-links{
-    width: 15%;
+    width: 18%;
     font-size: 18px;
 }
 
@@ -1968,7 +1968,7 @@ SONGS ONE
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-        max-width: 95%;
+        max-width: 100%;
     }
 /*=======================================================================
 SONGS ONE
