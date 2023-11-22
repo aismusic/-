@@ -7,18 +7,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-        
-       <!--favicon-img--> 
-       <link rel="icon" type="image/png" href="images/aiss.png">
-       <!--favicon-img-->
+    
+        <!--favicon-img-->
+        <link rel="icon" type="image/png" href="images/aiss.png">
+        <!--favicon-img-->
     
         <link rel="stylesheet" href="css/index.css">
-       
     
     </head>
 <body>
     <main id="songs-one">
+        <style>
+            /* Your existing styles */
 
+            @media only screen and (max-width: 768px) {
+                /* Add responsive styles for screens with width up to 768px */
+                .volume-container {
+                    right: 5px;
+                    bottom: 10%;
+                }
+
+                .volume-slider {
+                    background-color: blue; /* Adjust as needed */
+                }
+
+                /* Add more responsive styles as needed */
+            }
+        </style>
         <style>
             .volume-container {
                 position: fixed;
@@ -174,7 +189,7 @@
 
     <div class="navigation-content">
         <div class="navigation-logo hover opacity">
-            <a href="#" class="text">Ais Music</a>
+            <a href="index.html" class="text">Ais Music</a>
          </div>
          <ul class="navigation-ul">
             <li><a href="index.html" data-text="Home" data-img="images/bg-image-three.jpg">Home</a></li>
