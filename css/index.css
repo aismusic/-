@@ -61,30 +61,15 @@ BLOG-SINGLE
 COMMON
 ====================================*/
    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@font-face {
-        font-family: "monument";
-        src: url('fonts/monumentextended-regular-webfont.woff2') format('woff2'),
-        url('fonts/monumentextended-regular-webfont.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        }
-
-@font-face {
-            font-family: "camel";
-            src: url('fonts/camel.woff2') format('woff2'),
-            url('fonts/camel.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-            }
-
-@font-face {
-            font-family: "night";
-            src: url('fonts/tuesdaynight-regular-webfont.woff2') format('woff2'),
-             url('fonts/tuesdaynight-regular-webfont.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-            }
-    
+   @font-face {
+    font-family: 'Pacifico';
+    font-style:oblique;
+    font-weight: 400;
+    src: local('Pacifico Regular'), local('Pacifico-Regular'),
+      url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2)
+        format('woff2');
+    font-display: swap;
+  }
 
             
 *{
