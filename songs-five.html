@@ -310,7 +310,18 @@
                     </div>
                 `;
             });
-        });
+        });function loadImages() {
+            const images = document.querySelectorAll("img[data-src]");
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        }
+
+        // Load images first
+        loadImages();
+
+        // Load songs after a delay (adjust the delay as needed)
+        setTimeout(loadSongs, 2000);
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
