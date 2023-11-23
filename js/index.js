@@ -353,13 +353,4 @@ $(".navigation-content ul li a").hover(function(e) {
       });
   }
 
-
-
-
-  
- 
-
-
-
-
 /* download button*/
